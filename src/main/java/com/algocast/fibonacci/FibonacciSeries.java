@@ -1,4 +1,4 @@
-package com.algocast;
+package com.algocast.fibonacci;
 
 public class FibonacciSeries {
     public static void main(String[] args) {
