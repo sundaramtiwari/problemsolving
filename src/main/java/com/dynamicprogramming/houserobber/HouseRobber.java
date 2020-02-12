@@ -16,14 +16,14 @@ import java.util.List;
  */
 public class HouseRobber {
     public static void main(String[] args) {
-        System.out.println(maxGainOfRobbing(Arrays.asList(4, 2, 3, 9, 5)));
+        System.out.println(maxGainOfRobbing(Arrays.asList(4, 15, 3, 9, 5)));
     }
 
     private static long maxGainOfRobbing(List<Integer> houseList) {
         long maxGain = 0l;
 
         for (int i = 0; i < houseList.size(); i++) {
-            int gain = houseList.get(0);
+            int gain = houseList.get(i);
 
             // scan right list for max gain
             long rightGain = i < houseList.size() - 2 ? maxGainOfRobbing(houseList.subList(i + 2, houseList.size())) : 0;
@@ -33,7 +33,6 @@ public class HouseRobber {
 
             long totalGain = gain + rightGain + leftGain;
             if (maxGain < totalGain) {
-                System.out.println("Max Gain House includes: " + i);
                 maxGain = totalGain;
             }
         }
