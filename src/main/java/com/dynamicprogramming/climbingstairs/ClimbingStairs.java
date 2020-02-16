@@ -15,15 +15,27 @@ public class ClimbingStairs {
 
     private static Map<Integer, Integer> cache = new HashMap<>();
 
-    private static long climbStairs(int stairs) {
+    /**
+     * Recursive solution that run's in exponential time.
+     * Could optimize using a cache.
+     *
+     * @param stairs
+     * @return ways can you climb n stairs
+     */
+    private static long climbStairsRecursive(int stairs) {
         if ( stairs == 1)
             return 1;
         if (stairs == 2)
             return 2;
 
-        return climbStairs(stairs - 1) + climbStairs(stairs - 2);
+        return climbStairsRecursive(stairs - 1) + climbStairsRecursive(stairs - 2);
     }
 
+    /**
+     * Iterative solution that runs in O(n) time
+     * @param stairs
+     * @return ways can you climb n stairs
+     */
     private static long climbStairsIterative(int stairs) {
         List<Integer> list = new ArrayList<>();
         list.add(1);

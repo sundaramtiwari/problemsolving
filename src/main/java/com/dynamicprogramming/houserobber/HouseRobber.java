@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class HouseRobber {
     public static void main(String[] args) {
-        System.out.println(maxGainOfRobbingIterative(Arrays.asList(4, 15, 3, 9, 5)));
+        System.out.println(maxGainOfRobbingIterative(Arrays.asList(3, 4, 15, 3, 9, 5, 6)));
     }
 
     private static int maxGainOfRobbingIterative(List<Integer> houseList) {

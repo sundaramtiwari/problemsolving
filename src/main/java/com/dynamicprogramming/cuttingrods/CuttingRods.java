@@ -3,6 +3,7 @@ package com.dynamicprogramming.cuttingrods;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Given a rod of length n and prices P[i] for i=1,2,3...,n, where P[i] is
@@ -12,10 +13,40 @@ import java.util.List;
 public class CuttingRods {
 
     public static void main(String[] args) {
-        System.out.println(revenueIterative(5, Arrays.asList(1, 5, 8, 9, 10)));
+        System.out.println(revenueIterativeNew(4, Arrays.asList(1, 5, 8, 9, 11)));
     }
 
+    /**
+     * Takes time O(n2) = O(n) * (Om/2).
+     * @param length
+     * @param priceList
+     * @return
+     */
+    private static int revenueIterativeNew(int length, List<Integer> priceList) {
+        List<Integer> revenueList = new ArrayList<>(priceList.size());
+        revenueList.add(0, priceList.get(0));
+
+        for (int i = 1; i < priceList.size(); i++) {
+            int curMax = priceList.get(i);
+            for (int j = 0; j <= i / 2; j++) {
+                int tempMax = revenueList.get(j) + revenueList.get(i - j - 1);
+                curMax = Math.max(curMax, tempMax);
+            }
+            revenueList.add(i, curMax);
+        }
+
+        return revenueList.get(length - 1);
+    }
+
+    /**
+     * Takes O(n2) time = O(n) * O(m)
+     *
+     * @param size
+     * @param priceList
+     * @return
+     */
     private static int revenueIterative(int size, List<Integer> priceList) {
+
         List<Integer> revenueList = new ArrayList<>();
         revenueList.add(0, 0);
 
@@ -31,13 +62,22 @@ public class CuttingRods {
         return revenueList.get(size);
     }
 
-    private static int revenue(int size, List<Integer> priceList) {
+    /**
+     * Recursive solution running in exponential time.
+     *
+     * @param size
+     * @param priceList
+     * @return
+     */
+    private static int revenueRecursive(int size, List<Integer> priceList) {
         if (size == 0)
             return 0;
         int maxVal = -1;
 
         for (int i = 0; i < size; i++) {
-            int temp = priceList.get(size - i - 1) + revenue(i, priceList);
+            Integer currentPrice = priceList.get(size - i - 1);
+            int revenueRecursive = revenueRecursive(i, priceList);
+            int temp = currentPrice + revenueRecursive;
             if (temp > maxVal)
                 maxVal = temp;
         }

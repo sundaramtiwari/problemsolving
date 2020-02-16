@@ -21,12 +21,16 @@ public class BuyAndSellStock {
         int curMin = stockList.get(0);
         int maxProfit = 0;
 
+        // iterate through stock price list
         for (int i=1; i<stockList.size(); i++) {
+            // if current stock price is greater than the current minimum stock price,
+            // calculate gain and update maxProfit
             if (stockList.get(i) > curMin) {
                 int gain = stockList.get(i) - curMin;
                 if (gain > maxProfit)
                     maxProfit = gain;
             } else
+                // else if current stock price is less than current minimum, update current minimum
                 curMin = stockList.get(i);
         }
 
