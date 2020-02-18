@@ -1,4 +1,4 @@
-package com.challenge;
+package com.klarna;
 
 import java.util.HashMap;
 import java.util.List;

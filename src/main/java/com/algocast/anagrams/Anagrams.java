@@ -1,4 +1,4 @@
-package com.code.anagrams;
+package com.algocast.anagrams;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,10 +1,10 @@
 package com.algocast.anagrams;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static com.code.anagrams.Anagrams.*;
-import static org.junit.Assert.*;
+import static com.algocast.anagrams.Anagrams.areAnagrams;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class AnagramsTest {
 

@@ -3,7 +3,6 @@ package com.dynamicprogramming.cuttingrods;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Given a rod of length n and prices P[i] for i=1,2,3...,n, where P[i] is
@@ -18,11 +17,12 @@ public class CuttingRods {
 
     /**
      * Takes time O(n2) = O(n) * (Om/2).
+     *
      * @param length
      * @param priceList
      * @return
      */
-    private static int revenueIterativeNew(int length, List<Integer> priceList) {
+    public static int revenueIterativeNew(int length, List<Integer> priceList) {
         List<Integer> revenueList = new ArrayList<>(priceList.size());
         revenueList.add(0, priceList.get(0));
 
@@ -45,7 +45,7 @@ public class CuttingRods {
      * @param priceList
      * @return
      */
-    private static int revenueIterative(int size, List<Integer> priceList) {
+    public static int revenueIterative(int size, List<Integer> priceList) {
 
         List<Integer> revenueList = new ArrayList<>();
         revenueList.add(0, 0);
@@ -54,8 +54,9 @@ public class CuttingRods {
             int maxVal = -1;
             for (int j = 1; j <= i; j++) {
                 int temp = priceList.get(j - 1) + revenueList.get(i - j);
-                if (temp > maxVal)
+                if (temp > maxVal) {
                     maxVal = temp;
+                }
             }
             revenueList.add(i, maxVal);
         }
@@ -69,17 +70,19 @@ public class CuttingRods {
      * @param priceList
      * @return
      */
-    private static int revenueRecursive(int size, List<Integer> priceList) {
-        if (size == 0)
+    public static int revenueRecursive(int size, List<Integer> priceList) {
+        if (size == 0) {
             return 0;
+        }
         int maxVal = -1;
 
         for (int i = 0; i < size; i++) {
             Integer currentPrice = priceList.get(size - i - 1);
             int revenueRecursive = revenueRecursive(i, priceList);
             int temp = currentPrice + revenueRecursive;
-            if (temp > maxVal)
+            if (temp > maxVal) {
                 maxVal = temp;
+            }
         }
 
         return maxVal;

@@ -1,6 +1,5 @@
-package com.code.klarna;
+package com.klarna;
 
-import com.klarna.DiskSpace;
 import org.junit.Test;
 
 import java.util.Arrays;

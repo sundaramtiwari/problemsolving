@@ -1,13 +1,9 @@
-package com.challenge;
+package com.klarna;
 
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.OptionalInt;
 import java.util.Set;
-import java.util.stream.IntStream;
 
 import static java.util.Arrays.asList;
-import static java.util.stream.IntStream.*;
 
 public class DiskSpace {
     public static void main(String[] args) {

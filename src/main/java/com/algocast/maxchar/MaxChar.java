@@ -9,7 +9,7 @@ public class MaxChar {
         System.out.println(maxchar("abaadca 23 111"));
     }
 
-    private static char maxchar(String s) {
+    public static char maxchar(String s) {
         char character = 0;
 
         Map<Character, Integer> frequencyMap = new HashMap<>();

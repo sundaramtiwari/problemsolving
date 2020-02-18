@@ -1,6 +1,5 @@
-package com.code.klarna;
+package com.klarna;
 
-import com.klarna.SmoothieGenerator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
