@@ -1,4 +1,4 @@
-package com.code.anagrams;
+package com.algocast.anagrams;
 
 import org.junit.Assert;
 import org.junit.Test;

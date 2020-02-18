@@ -1,39 +1,39 @@
-package com.code.challenge;
+package com.code.klarna;
 
-import com.challenge.Challenge;
+import com.klarna.SmoothieGenerator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ChallengeTest {
+public class SmoothieGeneratorTest {
 
     @Test
     public void shouldPassForValidSmoothie() {
-        assertEquals("banana,honey,mango,peach,pineapple,strawberry", Challenge.ingredients("Classic"));
+        assertEquals("banana,honey,mango,peach,pineapple,strawberry", SmoothieGenerator.ingredients("Classic"));
     }
 
     @Test
     public void shouldPassForValidSmoothieWithAllergens() {
-        assertEquals("banana,honey,mango,peach,pineapple", Challenge.ingredients("Classic,-strawberry,-peanut"));
+        assertEquals("banana,honey,mango,peach,pineapple", SmoothieGenerator.ingredients("Classic,-strawberry,-peanut"));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testNewIngredient() {
-        Challenge.ingredients("Classic,chocolate");
+        SmoothieGenerator.ingredients("Classic,chocolate");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testInvalidSmoothie() {
-        Challenge.ingredients("Vitamin smoothie");
+        SmoothieGenerator.ingredients("Vitamin smoothie");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailForBlankOrEmptySmoothie() {
-        Challenge.ingredients("");
+        SmoothieGenerator.ingredients("");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldFailForNullSmoothie() {
-        Challenge.ingredients(null);
+        SmoothieGenerator.ingredients(null);
     }
 }

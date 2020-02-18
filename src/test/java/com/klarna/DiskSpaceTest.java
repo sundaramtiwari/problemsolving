@@ -1,6 +1,6 @@
-package com.code.challenge;
+package com.code.klarna;
 
-import com.challenge.DiskSpace;
+import com.klarna.DiskSpace;
 import org.junit.Test;
 
 import java.util.Arrays;

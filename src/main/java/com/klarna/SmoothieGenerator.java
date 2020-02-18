@@ -10,7 +10,7 @@ import static java.util.Arrays.asList;
 import static java.util.Arrays.stream;
 import static java.util.Objects.isNull;
 
-public class Challenge {
+public class SmoothieGenerator {
 
     public static void main(String[] args) {
         System.out.println(ingredients("Freezie,-blackberry"));
