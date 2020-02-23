@@ -7,7 +7,7 @@ import static java.util.Objects.isNull;
 
 public class Anagrams {
     public static void main(String[] args) {
-        System.out.println(areAnagrams("abc", "cab"));
+        System.out.println(areAnagrams("cab", "abc"));
     }
 
     public static boolean areAnagrams(String stringA, String stringB) {
