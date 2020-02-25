@@ -1,4 +1,4 @@
-package com.bolt;
+package com.interviews.bolt;
 
 import java.util.*;
 

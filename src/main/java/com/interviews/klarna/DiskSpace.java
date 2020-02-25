@@ -1,4 +1,4 @@
-package com.klarna;
+package com.interviews.klarna;
 
 import java.util.HashSet;
 import java.util.Set;

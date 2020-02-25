@@ -10,11 +10,11 @@ public class ClimbingStairsTest {
 
     @Test
     public void shouldPassForValidInput() {
-        assertEquals(4, climbStairsIterative(5));
+        assertEquals(8, climbStairsIterative(5));
     }
 
     @Test
     public void shouldPassForValidInput_1() {
-        assertEquals(4, climbStairsRecursive(5));
+        assertEquals(5, climbStairsRecursive(4));
     }
 }
